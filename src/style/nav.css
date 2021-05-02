@@ -25,4 +25,5 @@ nav > div > a{
 nav > div > a:hover{
     background-color: rgb(110, 120, 133);
     padding: 5px 0px 5px 0px;
+    border-radius: 3px;
 }
