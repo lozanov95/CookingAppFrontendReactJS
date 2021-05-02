@@ -3,15 +3,15 @@ export const Navigation = () => {
         <nav>
             <div className="nav-left">
                 <a href='/'>Home</a>
-                <a href='/'>Recipes</a>
-                <a href='/'>My recipes</a>
-                <a href='/'>Create recipe</a>
-                <a href='/'>About</a>
+                <a href='/recipes'>Recipes</a>
+                <a href='/myrecipes'>My recipes</a>
+                <a href='/create'>Create recipe</a>
+                <a href='/about'>About</a>
             </div>
             <div className="nav-right">
-                <a href='/'>Register</a>
-                <a href='/'>Login</a>
-                <a href='/'>Logout</a>
+                <a href='/register'>Register</a>
+                <a href='/login'>Login</a>
+                <a href='/logout'>Logout</a>
             </div>
         </nav>
     );
