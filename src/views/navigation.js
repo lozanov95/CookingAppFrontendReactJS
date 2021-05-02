@@ -6,6 +6,7 @@ export const Navigation = () => {
                 <a href='/'>Recipes</a>
                 <a href='/'>My recipes</a>
                 <a href='/'>Create recipe</a>
+                <a href='/'>About</a>
             </div>
             <div className="nav-right">
                 <a href='/'>Register</a>
