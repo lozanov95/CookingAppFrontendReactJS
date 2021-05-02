@@ -1,11 +1,10 @@
 .card-section{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-top: 50px;
     display: flex;
 }
 .card{
-    -webkit-box-shadow: 0px 0px 13px 9px #000000; 
-    box-shadow: 0px 0px 13px 9px #000000;
+    -webkit-box-shadow: 0px 0px 13px 9px #031e50; 
+    box-shadow: 0px 0px 13px 9px #031e50;
     border-radius: 6px;
     max-width: min-content;
     max-height: min-content;
@@ -19,7 +18,7 @@
 }
 .card > div > a{
     text-decoration: none;
-    background-color: black;
+    background-color: #06307e;
     color: white;
     padding: 6px 20px 6px 20px;
     margin: 0 5px 5px 0;
