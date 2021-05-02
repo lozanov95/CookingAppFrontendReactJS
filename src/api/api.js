@@ -33,3 +33,7 @@ export async function get(url) {
 export async function register(data) {
     return await request(`${settings.host}/api/token-auth/register/`, setOptions('post', data));
 }
+
+export async function login(data) {
+    return await request(`${settings.host}/api/token-auth/login/`, setOptions('post', data));
+}

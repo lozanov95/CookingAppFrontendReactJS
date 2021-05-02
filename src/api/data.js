@@ -6,3 +6,4 @@ export async function getRecipes() {
 }
 
 export const register = api.register;
+export const login = api.login;
