@@ -1,0 +1,24 @@
+nav {
+    background-color: black;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+}
+
+nav > div {
+    margin-top: 8px;
+    display: inline;
+}
+.nav-left{
+    float: left
+}
+.nav-right{
+    float: right
+}
+nav > div > a{
+    margin-left: 8px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}

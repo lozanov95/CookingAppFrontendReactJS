@@ -1,0 +1,40 @@
+body{
+    display: contents;
+    text-align: center;
+}
+.input-field{
+    border-radius: 6px;
+    width: 200px;
+    height: 22px;
+    margin: 0px 5px 0px 5px;
+}
+.btn{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #58c3f5;
+    color: white;
+    border-radius: 6px;
+    width: 150px;
+    height: 27px;
+}
+.form-container{
+    display: inline-flex;  
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: relative;
+    margin-top: 50px;
+}
+.form-container > div{
+    margin-bottom: 3px;
+}
+.error{
+    color: red;
+    font-size: 20px;
+    font-weight: 500;
+}
+.center{
+    align-self: center;
+}
