@@ -22,3 +22,7 @@ nav > div > a{
     color: white;
     font-size: 18px;
 }
+nav > div > a:hover{
+    background-color: rgb(110, 120, 133);
+    padding: 5px 0px 5px 0px;
+}
