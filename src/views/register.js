@@ -35,12 +35,19 @@ export class Register extends React.Component {
         if (emailValidatorResp !== true) {
             errors.push(emailValidatorResp);
         }
-        if (errors) {
+        if (errors.length > 0) {
             return this.setState({ errors });
         }
 
-        await register({ username, password, email });
-        window.alert('successfully registered!');
+        try {
+            const response = await register({ username, password, email });
+            console.log(response);
+            window.alert('Successfully registered! You can now login!');
+            return window.location = '/login';
+        } catch (err) {
+            window.alert('Please verify the register information!');
+            console.log(err.message);
+        }
     }
 
     render() {
