@@ -6,16 +6,22 @@ export const settings = {
 async function request(url, options) {
     try {
         const response = await fetch(url, options);
+        const contentType = response.headers.get('content-type');
         if (response.ok === false) {
-            const error = await response.json();
+            if (contentType === 'application/json') {
+                const error = await response.json();
+                throw new Error(JSON.stringify({ error }))
 
-            throw new Error(JSON.stringify({ error }))
-        }
-        try {
-            const data = await response.json();
-            return data;
-        } catch (error) {
-            return response;
+            } else {
+                throw new Error(response.statusText)
+            }
+        } else {
+            if (contentType === 'application/json') {
+                const data = await response.json();
+                return data;
+            } else {
+                return response;
+            }
         }
     } catch (error) {
         throw new Error(error.message);
