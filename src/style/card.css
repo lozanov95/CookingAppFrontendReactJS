@@ -12,22 +12,13 @@
     margin-left: 20px;
     margin-bottom: 10px;
 }
-.card > div > img{
+.card-img{
     width: 400px;
     height: 200px;
     padding-left: 2px;
     padding-right: 2px;
 }
-.card > div > a{
-    text-decoration: none;
-    background-color: #06307e;
-    color: white;
-    padding: 6px 20px 6px 20px;
-    margin: 0 5px 5px 0;
-    font-size: 20px;
-    float: right;
-    border-radius: 8px;
-}
+
 .card > div > h3{
     margin-left: 15px;
     font-size: 25px;
