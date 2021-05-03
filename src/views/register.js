@@ -40,13 +40,14 @@ export class Register extends React.Component {
         }
 
         try {
-            const response = await register({ username, password, email });
-            console.log(response);
+            await register({ username, password, email });
             window.alert('Successfully registered! You can now login!');
             return window.location = '/login';
         } catch (err) {
-            window.alert('Please verify the register information!');
-            console.log(err.message);
+            const parsed_error = JSON.parse(err.message).error;
+            const errors = [];
+            Object.keys(parsed_error).forEach((key) => { errors.push(`${key.toUpperCase()}: ${parsed_error[key]}`) });
+            this.setState({ errors });
         }
     }
 

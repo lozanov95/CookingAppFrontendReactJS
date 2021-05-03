@@ -7,8 +7,9 @@ async function request(url, options) {
     try {
         const response = await fetch(url, options);
         if (response.ok === false) {
-            const error = await response;
-            throw new Error(error.statusText)
+            const error = await response.json();
+
+            throw new Error(JSON.stringify({ error }))
         }
         try {
             const data = await response.json();
