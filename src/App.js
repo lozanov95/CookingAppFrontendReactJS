@@ -4,6 +4,7 @@ import './style/app.css';
 import { Navigation } from './views/navigation.js';
 import { CardList } from './views/card.js';
 import { Register } from './views/register.js';
+import { Login } from './views/login.js';
 /*
 function App() {
   return (
@@ -22,6 +23,7 @@ class App extends Component {
       <Switch>
         <Route exact path="/" component={CardList} />
         <Route path="/register" component={Register} />
+        <Route path="/login" component={Login} />
       </Switch>
     </Router>
   }
