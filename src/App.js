@@ -5,16 +5,6 @@ import { Navigation } from './views/navigation.js';
 import { CardList } from './views/card.js';
 import { Register } from './views/register.js';
 import { Login } from './views/login.js';
-/*
-function App() {
-  return (
-    <div>
-    <Navigation />
-    <Register />
-    </div>
-    );
-  }
-  */
 
 class App extends Component {
   render() {
@@ -22,6 +12,7 @@ class App extends Component {
       <Navigation />
       <Switch>
         <Route exact path="/" component={CardList} />
+        <Route path="/recipes" component={CardList} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
       </Switch>
