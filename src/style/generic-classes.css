@@ -1,12 +1,19 @@
 body{
     display: contents;
     text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .input-field{
     border-radius: 6px;
     width: 200px;
     height: 22px;
     margin: 0px 5px 0px 5px;
+}
+.textarea-field{
+    border-radius: 6px;
+    margin: 0px 5px 0px 5px;
+    height: 250px;
+    width: 500px;
 }
 .btn{
     font-size: 16px;
@@ -36,10 +43,20 @@ body{
 }
 .center{
     align-self: center;
+    align-items: center;
 }
 .left{
     float: left
 }
 .right{
     float: right
+}
+.inline-fl{
+    display: inline-flex;
+}
+.grid{
+    display: grid;
+}
+.label{
+    font-size: 25px;
 }

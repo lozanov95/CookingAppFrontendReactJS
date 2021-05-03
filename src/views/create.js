@@ -55,34 +55,34 @@ export class CreateRecipe extends Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit} className="form-container">
+            <form onSubmit={this.onSubmit} className="form-container center">
                 {this.state.errors.length > 0 ?
                     <ErrorDisplayComponent errors={this.state.errors} /> : ''
                 }
                 <div>
-                    <h2>Create new recipe</h2>
+                    <h1>Create new recipe</h1>
                 </div>
-                <div>
-                    <label>Name</label><input className="input-field" name="name" />
+                <div className="grid">
+                    <label className="label">Name</label><input className="input-field" name="name" />
                 </div>
-                <div>
-                    <label>Difficulty</label>
-                    <select name="difficulty">
+                <div className="grid">
+                    <label className="label">Difficulty</label>
+                    <select className="input-field" name="difficulty">
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>
                     </select>
                 </div>
-                <div>
-                    <label>Ingredients</label>
-                    <textarea name="ingredients" />
+                <div className="grid">
+                    <label className="label">Ingredients</label>
+                    <textarea className="textarea-field" name="ingredients" />
                 </div>
-                <div>
-                    <label>Preparation steps</label>
-                    <textarea name="preparation_steps" />
+                <div className="grid">
+                    <label className="label">Preparation steps</label>
+                    <textarea className="textarea-field" name="preparation_steps" />
                 </div>
-                <div>
-                    <label>Image URL</label>
+                <div className="grid">
+                    <label className="label">Image URL</label>
                     <input className="input-field" name="imageUrl" />
                 </div>
                 <div>
