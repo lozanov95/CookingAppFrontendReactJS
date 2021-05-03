@@ -13,6 +13,10 @@ export async function createRecipe(data) {
     return await api.post(api.settings.host + '/api/recipes/create', data);
 }
 
+export async function getRecipeById(id) {
+    return await api.get(api.settings.host + '/api/recipes/' + id);
+}
+
 export const register = api.register;
 export const login = api.login;
 export const logout = api.logout;
