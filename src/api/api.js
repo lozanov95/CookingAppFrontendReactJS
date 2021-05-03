@@ -10,8 +10,12 @@ async function request(url, options) {
             const error = await response;
             throw new Error(error.statusText)
         }
-        const data = await response.json();
-        return data;
+        try {
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            return response;
+        }
     } catch (error) {
         throw new Error(error.message);
     }

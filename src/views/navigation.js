@@ -1,17 +1,32 @@
 import { Component } from "react";
+import { logout } from '../api/data.js';
 
 export class Navigation extends Component {
     constructor(props) {
         super(props);
         this.state = { authenticated: false }
+
+        this.handleClick = this.handleClick.bind(this);
     }
-    componentDidMount() {
+
+    checkState() {
         if (sessionStorage.getItem('authToken')) {
             this.setState({ authenticated: true });
         } else {
             this.setState({ authenticated: false });
         }
     }
+
+    componentDidMount() {
+        this.checkState();
+    }
+
+    async handleClick(ev) {
+        ev.preventDefault();
+        await logout();
+        this.checkState();
+    }
+
     render() {
         return (
             <nav>
@@ -25,7 +40,7 @@ export class Navigation extends Component {
                 <div className="right">
                     {!this.state.authenticated ? <a className="nav-item" href='/register'>Register</a> : ""}
                     {!this.state.authenticated ? <a className="nav-item" href='/login'>Login</a> : ""}
-                    {this.state.authenticated ? <a className="nav-item" href='/logout'>Logout</a> : ""}
+                    {this.state.authenticated ? <a className="nav-item" href='/' onClick={this.handleClick}>Logout</a> : ""}
                 </div>
             </nav>
         )
