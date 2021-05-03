@@ -12,3 +12,23 @@ export function passwordValidator(str) {
     }
     return true;
 }
+
+export function undefinedNullEmptyValidator(...args) {
+    let valid = true;
+    args.forEach((arg) => {
+        if (arg === undefined || arg === null || arg.length === 0) {
+            valid = false;
+            return;
+        }
+    });
+
+    return valid;
+}
+
+export function urlValidator(str) {
+    const pattern = /http[s]*:\/\/.+\..+/;
+    if (pattern.test(str) === false) {
+        return 'You must enter a valid URL!';
+    }
+    return true;
+}
