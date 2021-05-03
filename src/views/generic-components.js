@@ -16,11 +16,11 @@ export function SubmitRecipe(props) {
                 <h1>{props.title}</h1>
             </div>
             <div className="grid">
-                <label className="label">Name</label><input className="input-field" name="name" value={props.recipe ? props.recipe.name : ''} />
+                <label className="label">Name</label><input className="input-field" name="name" defaultValue={props.recipe ? props.recipe.name : ''} />
             </div>
             <div className="grid">
                 <label className="label">Difficulty</label>
-                <select className="input-field" name="difficulty" value={props.recipe ? props.recipe.difficulty : ''}>
+                <select className="input-field" name="difficulty" defaultValue={props.recipe ? props.recipe.difficulty : ''}>
                     <option value="Easy">Easy</option>
                     <option value="Medium">Medium</option>
                     <option value="Hard">Hard</option>
@@ -28,15 +28,15 @@ export function SubmitRecipe(props) {
             </div>
             <div className="grid">
                 <label className="label">Ingredients</label>
-                <textarea className="textarea-field" name="ingredients" value={props.recipe ? props.recipe.ingredients : ''} />
+                <textarea className="textarea-field" name="ingredients" defaultValue={props.recipe ? props.recipe.ingredients : ''} />
             </div>
             <div className="grid">
                 <label className="label">Preparation steps</label>
-                <textarea className="textarea-field" name="preparation_steps" value={props.recipe ? props.recipe.preparation_steps : ''} />
+                <textarea className="textarea-field" name="preparation_steps" defaultValue={props.recipe ? props.recipe.preparation_steps : ''} />
             </div>
             <div className="grid">
                 <label className="label">Image URL</label>
-                <input className="input-field" name="imageUrl" value={props.recipe ? props.recipe.image_url : ''} />
+                <input className="input-field" name="imageUrl" defaultValue={props.recipe ? props.recipe.image_url : ''} />
             </div>
             <div>
                 <input type="submit" className="btn" value={props.btnName} />

@@ -15,7 +15,7 @@ export class Edit extends Component {
     async componentDidMount() {
         const id = this.props.match.params.id;
         const recipe = await getRecipeById(id);
-        this.setState({ recipe })
+        this.setState({ recipe, id })
     }
 
     async handleSubmit(ev) {
@@ -50,7 +50,7 @@ export class Edit extends Component {
             image_url: imageUrl
         };
         try {
-            await editRecipe(data, data);
+            await editRecipe(this.state.id, data);
             window.alert('The recipe was edited succesfully!');
             window.location = '/';
         } catch (err) {
