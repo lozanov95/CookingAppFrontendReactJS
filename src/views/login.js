@@ -28,9 +28,7 @@ export class Login extends Component {
         }
 
         try {
-            const { token, user_id } = await login({ username, password });
-            sessionStorage.authToken = token;
-            sessionStorage.userId = user_id;
+            await login({ username, password });
             window.alert('You signed-in successfully!')
             window.location = '/';
         } catch (err) {
