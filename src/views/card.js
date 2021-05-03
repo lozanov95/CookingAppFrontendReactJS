@@ -6,10 +6,10 @@ function Card(props) {
         <div className="card">
             <div>
                 <h3>{props.name}</h3>
-                <img src={props.image_url} alt={props.name} />
+                <img className="card-img" src={props.image_url} alt={props.name} />
             </div>
             <div>
-                <a href={props.href_url}>View</a>
+                <a className="anchor-btn" href={props.href_url}>View</a>
             </div>
         </div>
     );
