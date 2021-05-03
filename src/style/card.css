@@ -1,6 +1,7 @@
 .card-section{
     margin-top: 50px;
     display: flex;
+    flex-wrap: wrap;
 }
 .card{
     -webkit-box-shadow: 0px 0px 13px 9px #031e50; 
@@ -9,6 +10,7 @@
     max-width: min-content;
     max-height: min-content;
     margin-left: 20px;
+    margin-bottom: 10px;
 }
 .card > div > img{
     width: 400px;
