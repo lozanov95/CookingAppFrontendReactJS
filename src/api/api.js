@@ -11,7 +11,6 @@ async function request(url, options) {
             if (contentType === 'application/json') {
                 const error = await response.json();
                 throw new Error(JSON.stringify({ error }))
-
             } else {
                 throw new Error(response.statusText)
             }
