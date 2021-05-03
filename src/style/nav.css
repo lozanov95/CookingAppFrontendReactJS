@@ -11,13 +11,7 @@ nav > div {
     margin-top: 8px;
     display: inline;
 }
-.nav-left{
-    float: left
-}
-.nav-right{
-    float: right
-}
-nav > div > a{
+.nav-item{
     margin-left: 10px;
     text-decoration: none;
     color: white;

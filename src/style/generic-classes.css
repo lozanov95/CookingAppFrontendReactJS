@@ -37,3 +37,9 @@ body{
 .center{
     align-self: center;
 }
+.left{
+    float: left
+}
+.right{
+    float: right
+}
