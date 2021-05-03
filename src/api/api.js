@@ -44,6 +44,11 @@ export async function get(url) {
 export async function post(url, data) {
     return await request(url, setOptions('post', data));
 }
+
+export async function put(url, data) {
+    return await request(url, setOptions('put', data));
+}
+
 export async function register(data) {
     return await post(`${settings.host}/api/token-auth/register/`, data);
 }
