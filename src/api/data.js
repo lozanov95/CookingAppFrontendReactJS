@@ -17,6 +17,10 @@ export async function getRecipeById(id) {
     return await api.get(api.settings.host + '/api/recipes/' + id);
 }
 
+export async function editRecipe(id, data) {
+    return await api.put(api.settings.host + '/api/recipes/edit/' + id, data);
+}
+
 export const register = api.register;
 export const login = api.login;
 export const logout = api.logout;

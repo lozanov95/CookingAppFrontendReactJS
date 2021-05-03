@@ -7,6 +7,7 @@ import { Register } from './views/register.js';
 import { Login } from './views/login.js';
 import { CreateRecipe } from './views/create.js';
 import { Details } from './views/details.js';
+import { Edit } from './views/edit.js';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
         <Route path="/login" component={Login} />
         <Route path="/create/" component={CreateRecipe} />
         <Route path="/details/:id" component={Details} />
+        <Route path="/edit/:id" component={Edit} />
       </Switch>
     </Router>
   }
