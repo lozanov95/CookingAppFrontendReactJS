@@ -1,5 +1,5 @@
 import { Component } from "react"
-import { ErrorDisplayComponent } from './generic-components.js';
+import { SubmitRecipe } from './generic-components.js';
 import { undefinedNullEmptyValidator, urlValidator } from '../utils/validators.js';
 import { createRecipe } from "../api/data.js";
 import { parseErrorsToArray } from "../utils/utils.js";
@@ -55,40 +55,7 @@ export class CreateRecipe extends Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit} className="form-container center">
-                {this.state.errors.length > 0 ?
-                    <ErrorDisplayComponent errors={this.state.errors} /> : ''
-                }
-                <div>
-                    <h1>Create new recipe</h1>
-                </div>
-                <div className="grid">
-                    <label className="label">Name</label><input className="input-field" name="name" />
-                </div>
-                <div className="grid">
-                    <label className="label">Difficulty</label>
-                    <select className="input-field" name="difficulty">
-                        <option value="Easy">Easy</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Hard">Hard</option>
-                    </select>
-                </div>
-                <div className="grid">
-                    <label className="label">Ingredients</label>
-                    <textarea className="textarea-field" name="ingredients" />
-                </div>
-                <div className="grid">
-                    <label className="label">Preparation steps</label>
-                    <textarea className="textarea-field" name="preparation_steps" />
-                </div>
-                <div className="grid">
-                    <label className="label">Image URL</label>
-                    <input className="input-field" name="imageUrl" />
-                </div>
-                <div>
-                    <input type="submit" className="btn" value="Create" />
-                </div>
-            </form>
+            <SubmitRecipe errors={this.state.errors} recipe={this.state.recipe} handleSubmit={this.handleSubmit} title="Create Recipe" btnName='Create' />
         );
     }
 }
