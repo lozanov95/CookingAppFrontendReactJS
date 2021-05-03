@@ -1,6 +1,6 @@
 export const settings = {
     host: 'https://cooking-app-backend-vasil-loz.herokuapp.com',
-    debug: true
+    debug: false
 }
 
 async function request(url, options) {
