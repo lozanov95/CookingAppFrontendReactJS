@@ -24,6 +24,7 @@ export class Navigation extends Component {
     async handleClick(ev) {
         ev.preventDefault();
         await logout();
+        window.location = '/'
         this.checkState();
     }
 
