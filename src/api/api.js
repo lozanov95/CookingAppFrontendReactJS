@@ -1,3 +1,5 @@
+import { clearUserSession, handleInvalidToken } from '../utils/utils.js';
+
 export const settings = {
     host: 'https://cooking-app-backend-vasil-loz.herokuapp.com',
     debug: false
@@ -23,12 +25,13 @@ async function request(url, options) {
             }
         }
     } catch (error) {
+        handleInvalidToken(error);
         throw new Error(error.message);
     }
 }
 
 function setOptions(method = 'get', body) {
-    const options = { method, headers: { 'Content-Type': 'application/json' } };
+    const options = { method, headers: {} };
 
     const authToken = sessionStorage.getItem('authToken');
     if (authToken) {
@@ -36,6 +39,7 @@ function setOptions(method = 'get', body) {
     }
 
     if (body) {
+        options.headers['Content-Type'] = 'application/json';
         options.body = JSON.stringify(body);
     }
 
@@ -67,7 +71,6 @@ export async function login(data) {
 
 export async function logout() {
     const response = await get(`${settings.host}/api/token-auth/logout/`);
-    sessionStorage.removeItem('authToken');
-    sessionStorage.removeItem('userId');
+    clearUserSession();
     return response;
 }
