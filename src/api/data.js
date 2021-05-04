@@ -28,6 +28,14 @@ export async function getRecipesForCurrentUser() {
     return await api.get(api.settings.host + '/api/recipes?creator_id=' + userId);
 }
 
+export async function addComment(recipeId, content) {
+    return await api.post(api.settings.host + '/api/recipes/' + recipeId + '/comments/create', content)
+}
+
+export async function getComments(recipeId) {
+    return await api.get(api.settings.host + '/api/recipes/' + recipeId + '/comments');
+}
+
 export const register = api.register;
 export const login = api.login;
 export const logout = api.logout;
