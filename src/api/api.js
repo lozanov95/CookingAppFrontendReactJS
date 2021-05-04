@@ -2,7 +2,6 @@ import { clearUserSession, handleInvalidToken } from '../utils/utils.js';
 
 export const settings = {
     host: 'https://cooking-app-backend-vasil-loz.herokuapp.com',
-    debug: false
 }
 
 async function request(url, options) {

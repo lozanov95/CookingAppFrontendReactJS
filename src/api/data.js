@@ -1,5 +1,5 @@
 import * as api from './api.js';
-if (api.settings.debug) {
+if (process.env.NODE_ENV === 'development') {
     api.settings.host = 'http://127.0.0.1:8000';
 } else {
     api.settings.host = 'https://cooking-app-backend-vasil-loz.herokuapp.com';
