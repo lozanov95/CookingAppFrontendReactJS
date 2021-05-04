@@ -21,6 +21,10 @@ export async function editRecipe(id, data) {
     return await api.put(api.settings.host + '/api/recipes/edit/' + id, data);
 }
 
+export async function deleteRecipe(id) {
+    return await api.del(api.settings.host + '/api/recipes/delete/' + id);
+}
+
 export const register = api.register;
 export const login = api.login;
 export const logout = api.logout;
