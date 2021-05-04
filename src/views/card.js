@@ -18,12 +18,13 @@ function Card(props) {
 export class CardList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { recipes: [] }
+        this.state = { recipes: [], emptyMessage: 'Loading...' }
     }
 
     async componentDidMount() {
         const recipes = await getRecipes();
-        this.setState({ recipes })
+        const emptyMessage = 'There are no recipes yet.'
+        this.setState({ recipes, emptyMessage })
     }
 
     render() {
@@ -31,7 +32,7 @@ export class CardList extends React.Component {
             <div className="card-section">
                 {this.state.recipes.length > 0 ?
                     this.state.recipes.map((el) => <Card key={el.id} name={el.name} image_url={el.image_url} href_url={'/details/' + el.id} />) :
-                    <div>There are no recipes yet.</div>}
+                    <div>{this.state.emptyMessage}</div>}
             </div>
         )
     }
