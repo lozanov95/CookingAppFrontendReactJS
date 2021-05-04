@@ -25,6 +25,11 @@ export async function deleteRecipe(id) {
     return await api.del(api.settings.host + '/api/recipes/delete/' + id);
 }
 
+export async function getRecipesForCurrentUser() {
+    const userId = sessionStorage.getItem('userId');
+    return await api.get(api.settings.host + '/api/recipes?creator_id=' + userId);
+}
+
 export const register = api.register;
 export const login = api.login;
 export const logout = api.logout;
