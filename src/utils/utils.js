@@ -24,3 +24,9 @@ export function handleInvalidToken(error) {
         }
     } catch (error) { }
 }
+
+export function logDevMessages(msg) {
+    if (process.env.NODE_ENV === 'development') {
+        console.log(msg);
+    }
+}
