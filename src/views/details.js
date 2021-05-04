@@ -1,18 +1,29 @@
 import { Component } from "react";
-import { getRecipeById } from '../api/data.js';
+import { getRecipeById, deleteRecipe } from '../api/data.js';
 
 export class Details extends Component {
     constructor(props) {
         super(props);
-        this.state = { recipe: {}, isCreator: false }
+        this.state = { recipe: {}, isCreator: false, id: this.props.match.params.id }
+
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     async componentDidMount() {
-        const id = this.props.match.params.id;
-        const recipe = await getRecipeById(id);
+        const recipe = await getRecipeById(this.state.id);
         const isCreator = recipe.creator_id.toString() === (sessionStorage.getItem('userId') || '').toString();
         this.setState({ recipe, isCreator });
     }
+
+    async handleDelete(ev) {
+        ev.preventDefault();
+        if (window.confirm('Are you sure that you want to delete this recipe?')) {
+            await deleteRecipe(this.state.id);
+            window.alert('The recipe was deleted succesfully');
+            window.location = '/';
+        }
+    }
+
 
     render() {
         return (
@@ -37,6 +48,7 @@ export class Details extends Component {
                 </div>
                 <div>
                     {this.state.isCreator ? <a href={`/edit/${this.state.recipe.id}`} className="anchor-btn">Edit</a> : ''}
+                    {this.state.isCreator ? <a href='/#' onClick={this.handleDelete} className="anchor-btn">Delete</a> : ''}
                     <a href={`/recipes`} className="anchor-btn">Back</a>
                 </div>
             </div>
