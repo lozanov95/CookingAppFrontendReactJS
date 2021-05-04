@@ -4,13 +4,14 @@ import { getRecipeById } from '../api/data.js';
 export class Details extends Component {
     constructor(props) {
         super(props);
-        this.state = { recipe: {} }
+        this.state = { recipe: {}, isCreator: false }
     }
 
     async componentDidMount() {
         const id = this.props.match.params.id;
         const recipe = await getRecipeById(id);
-        this.setState({ recipe });
+        const isCreator = recipe.creator_id.toString() === sessionStorage.getItem('userId').toString();
+        this.setState({ recipe, isCreator });
     }
 
     render() {
@@ -34,7 +35,10 @@ export class Details extends Component {
                     <label className="label">Difficulty</label>
                     <p>{this.state.recipe.difficulty}</p>
                 </div>
-                <a href={`/edit/${this.state.recipe.id}`} className="anchor-btn">Edit</a>
+                <div>
+                    {this.state.isCreator ? <a href={`/edit/${this.state.recipe.id}`} className="anchor-btn">Edit</a> : ''}
+                    <a href={`/recipes`} className="anchor-btn">Back</a>
+                </div>
             </div>
         )
     }
