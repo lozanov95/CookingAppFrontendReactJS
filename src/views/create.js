@@ -9,10 +9,10 @@ export class CreateRecipe extends Component {
         super(props);
         this.state = { errors: [] };
 
-        this.onSubmit = this.onSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    async onSubmit(ev) {
+    async handleSubmit(ev) {
         ev.preventDefault();
         const formData = new FormData(ev.target);
         const name = formData.get('name');
