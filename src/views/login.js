@@ -38,7 +38,7 @@ export class Login extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="form-container">
+            <form onSubmit={this.handleSubmit} className="form-container align-end">
                 {this.state.errors.length > 0 ?
                     <ErrorDisplayComponent errors={this.state.errors} /> : ''
                 }
