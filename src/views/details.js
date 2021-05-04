@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { getRecipeById, deleteRecipe } from '../api/data.js';
+import { CommentList } from './comments.js';
 
 export class Details extends Component {
     constructor(props) {
@@ -23,7 +24,6 @@ export class Details extends Component {
             window.location = '/';
         }
     }
-
 
     render() {
         return (
@@ -51,6 +51,7 @@ export class Details extends Component {
                     {this.state.isCreator ? <a href='/#' onClick={this.handleDelete} className="anchor-btn">Delete</a> : ''}
                     <a href={`/recipes`} className="anchor-btn">Back</a>
                 </div>
+                <CommentList recipeId={this.state.id} />
             </div>
         )
     }
