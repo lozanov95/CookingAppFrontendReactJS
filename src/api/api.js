@@ -58,6 +58,10 @@ export async function put(url, data) {
     return await request(url, setOptions('put', data));
 }
 
+export async function del(url) {
+    return await request(url, setOptions('delete'));
+}
+
 export async function register(data) {
     return await post(`${settings.host}/api/token-auth/register/`, data);
 }
