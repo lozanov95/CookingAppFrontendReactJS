@@ -10,7 +10,7 @@ export class Details extends Component {
     async componentDidMount() {
         const id = this.props.match.params.id;
         const recipe = await getRecipeById(id);
-        const isCreator = recipe.creator_id.toString() === sessionStorage.getItem('userId').toString();
+        const isCreator = recipe.creator_id.toString() === (sessionStorage.getItem('userId') || '').toString();
         this.setState({ recipe, isCreator });
     }
 
