@@ -16,7 +16,6 @@ export class Login extends Component {
         const username = formData.get('username');
         const password = formData.get('password');
 
-
         const errors = [];
 
         if (username.length === 0 || password.length === 0) {
@@ -29,7 +28,6 @@ export class Login extends Component {
 
         try {
             await login({ username, password });
-            window.alert('You signed-in successfully!')
             window.location = '/';
         } catch (err) {
             this.setState({ errors: ['Username or password is incorrect!'] })
