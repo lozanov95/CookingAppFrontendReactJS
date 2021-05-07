@@ -44,15 +44,19 @@ export class Navigation extends Component {
                         <span></span>
                     </label>
                 </div>
-                <div className="nav-links left">
-                    <a href='/' className="nav-link">Home</a>
-                    <a href='/recipes' className="nav-link">Recipes</a>
-                    {this.state.authenticated ? <a href='/myrecipes' className="nav-link">My recipes</a> : ""}
-                    {this.state.authenticated ? <a href='/create' className="nav-link">Create recipe</a> : ""}
-                    <a href='/about' className="nav-link">About</a>
-                    {!this.state.authenticated ? <a href='/register' className="nav-link">Register</a> : ""}
-                    {!this.state.authenticated ? <a href='/login' className="nav-link">Login</a> : ""}
-                    {this.state.authenticated ? <a href='/' onClick={this.handleClick} className="nav-link">Logout</a> : ""}
+                <div className="nav-links">
+                    <div className="nav-left">
+                        <a href='/' className="nav-link">Home</a>
+                        <a href='/recipes' className="nav-link">Recipes</a>
+                        {this.state.authenticated ? <a href='/myrecipes' className="nav-link">My recipes</a> : ""}
+                        {this.state.authenticated ? <a href='/create' className="nav-link">Create recipe</a> : ""}
+                        <a href='/about' className="nav-link">About</a>
+                    </div>
+                    <div className="nav-right">
+                        {!this.state.authenticated ? <a href='/register' className="nav-link">Register</a> : ""}
+                        {!this.state.authenticated ? <a href='/login' className="nav-link">Login</a> : ""}
+                        {this.state.authenticated ? <a href='/' onClick={this.handleClick} className="nav-link">Logout</a> : ""}
+                    </div>
                 </div>
             </div>
         )

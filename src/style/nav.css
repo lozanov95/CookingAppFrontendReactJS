@@ -1,46 +1,54 @@
 * {
     box-sizing: border-box;
+}
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: #06307e;
+  position: relative;
+}  
+.nav > .nav-header {
+  display: inline;
+}  
+.nav > .nav-header > .nav-title {
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+  float: left;
+ }  
+.nav > .nav-btn {
+  display: none;
+}  
+.nav > .nav-links {
+  display: inline;
+  font-size: 18px;
+}  
+.nav-link {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+.nav-link:hover {
+  background-color: rgba(195, 207, 29, 0.3);
+}  
+.nav > #nav-check {
+  display: none;
+} 
+.nav-left{
+  display: inline;
+  float:left;
+}
+.nav-right{
+  display: inline;
+  float:right;
+}
+
+@media (max-width:786px) {
+  .nav > .nav-header > .nav-title{
+      float:unset;
   }
- .nav {
-    height: 50px;
-    width: 100%;
-    background-color: #06307e;
-    position: relative;
-  }  
-  .nav > .nav-header {
-    display: inline;
-  }  
-  .nav > .nav-header > .nav-title {
-   /* display: inline-block;*/
-    font-size: 22px;
-    color: #fff;
-    padding: 10px 10px 10px 10px;
-    float: left;
-  }  
   .nav > .nav-btn {
-    display: none;
-  }  
-  .nav > .nav-links {
-    display: inline;
-    font-size: 18px;
-  }  
-  .nav-link {
-    display: inline-block;
-    padding: 13px 10px 13px 10px;
-    text-decoration: none;
-    color: #efefef;
-  }
-    .nav-link:hover {
-    background-color: rgba(195, 207, 29, 0.3);
-  }  
-  .nav > #nav-check {
-    display: none;
-  }  
-  @media (max-width:786px) {
-    .nav > .nav-header > .nav-title{
-        float:unset;
-    }
-    .nav > .nav-btn {
       display: inline-block;
       position: absolute;
       right: 0px;
@@ -61,7 +69,7 @@
       height: 10px;
       border-top: 2px solid #eee;
     }
-    .nav > .nav-links {
+    .nav-links {
       position: absolute;
       display: block;
       width: 100%;
@@ -83,9 +91,12 @@
       height: calc(100vh - 50px);
       overflow-y: auto;
     }
+    .nav-links > div{
+      float:unset;
+    }
   }
-  @media screen and (min-width: 1900px){
-      .container{
-          min-height: 870px;
-      }
-  }
+@media screen and (min-width: 1900px){
+    .container{
+      min-height: 870px;
+    }
+}
