@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { getRecipeById, deleteRecipe } from '../api/data.js';
-import { CommentList } from './comments.js';
+import { CommentList } from '../components/comments-component.js';
 
 export class Details extends Component {
     constructor(props) {

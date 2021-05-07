@@ -1,6 +1,6 @@
 import React from 'react';
 import { getRecipesForCurrentUser } from '../api/data.js';
-import { CardSection } from '../views/generic-components.js';
+import { CardSection } from '../components/card-component.js'
 
 export class MyRecipesView extends React.Component {
     constructor(props) {

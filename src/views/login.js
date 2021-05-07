@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { ErrorDisplayComponent } from './generic-components.js';
+import { ErrorDisplayComponent } from '../components/generic-components.js';
 import { login } from '../api/data.js';
 
 export class Login extends Component {

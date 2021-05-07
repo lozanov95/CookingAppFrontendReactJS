@@ -1,6 +1,6 @@
 import React from "react";
 import { register } from '../api/data.js';
-import { ErrorDisplayComponent } from './generic-components.js';
+import { ErrorDisplayComponent } from '../components/generic-components.js';
 import { emailValidator, passwordValidator } from '../utils/validators.js';
 import { parseErrorsToArray } from '../utils/utils.js';
 

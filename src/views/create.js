@@ -1,5 +1,5 @@
-import { Component } from "react"
-import { SubmitRecipe } from './generic-components.js';
+import { Component } from "react";
+import { SubmitRecipe } from '../components/recipe-component.js';
 import { undefinedNullEmptyValidator, urlValidator } from '../utils/validators.js';
 import { createRecipe } from "../api/data.js";
 import { parseErrorsToArray } from "../utils/utils.js";

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './style/app.css';
-import { Navigation } from './views/navigation.js';
+import { Navigation } from './components/navigation-component.js';
 import { RecipesView } from './views/recipes.js';
 import { Register } from './views/register.js';
 import { Login } from './views/login.js';
