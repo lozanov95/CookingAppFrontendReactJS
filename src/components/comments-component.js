@@ -38,7 +38,7 @@ export class CommentList extends Component {
                     <h2>Comments:</h2>
                 </div>
                 <div>
-                    {this.state.comments.length > 0 ? this.state.comments.map((el) => <Comment author={el.author_id} content={el.content} />) : <p>{this.state.emptyMessage}</p>}
+                    {this.state.comments.length > 0 ? this.state.comments.map((el) => <Comment key={el.id} author={el.author_id} content={el.content} />) : <p>{this.state.emptyMessage}</p>}
                 </div>
                 <div>
                     {this.state.isAuthenticated ? <AddComment handleSubmit={this.handleSubmit} /> : <div><p style={{ fontWeight: 600 }}>Sign-in to post a comment.</p></div>}
