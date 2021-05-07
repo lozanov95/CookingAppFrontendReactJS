@@ -10,13 +10,14 @@ import { Details } from './views/details.js';
 import { Edit } from './views/edit.js';
 import { About } from './views/about.js';
 import { MyRecipesView } from './views/myrecipe.js';
+import { HomeView } from './views/home.js';
 
 class App extends Component {
   render() {
     return <Router>
       <Navigation />
       <Switch>
-        <Route exact path="/" component={RecipesView} />
+        <Route exact path="/" component={HomeView} />
         <Route path="/recipes" component={RecipesView} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
