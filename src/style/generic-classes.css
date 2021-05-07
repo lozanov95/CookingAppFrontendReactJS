@@ -96,6 +96,7 @@ body{
 @media screen and (max-width: 768px) {
     .container{
         width: 92%;
+        position:unset;
     }
     .textarea-field{
         width: 300px;
