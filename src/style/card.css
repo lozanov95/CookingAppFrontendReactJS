@@ -4,13 +4,12 @@
     border-radius: 6px;
     max-width: min-content;
     max-height: min-content;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    background-color: #e7e2ec;
+    margin: 0px 10px 20px 10px;
+    background-color: #f1bb88;
 }
 .card-img{
     width: 400px;
-    height: 200px;
+    height: 250px;
     padding-left: 2px;
     padding-right: 2px;
 }
