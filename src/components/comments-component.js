@@ -25,6 +25,7 @@ export class CommentList extends Component {
         if (undefinedNullEmptyValidator(content)) {
             await addComment(recipeId, content);
             const comments = await getComments(recipeId);
+            ev.target.querySelector('.input-field').value = '';
             this.setState({ comments });
         }
     }
