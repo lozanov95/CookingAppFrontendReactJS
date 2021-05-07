@@ -27,7 +27,7 @@ export class Details extends Component {
 
     render() {
         return (
-            <div className="form-container center">
+            <div className="container center column">
                 <div>
                     <h1>{this.state.recipe.name}</h1>
                 </div>

@@ -52,29 +52,31 @@ export class Register extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="form-container align-end">
-                {this.state.errors.length > 0 ?
-                    <ErrorDisplayComponent errors={this.state.errors} /> : ''
-                }
-                <div className="center">
-                    <h2>Register</h2>
-                </div>
-                <div>
-                    <label>Username</label><input className="input-field" name="username"></input>
-                </div>
-                <div>
-                    <label>Password</label><input type="password" className="input-field" name="password"></input>
-                </div>
-                <div>
-                    <label>Repeat password</label><input type="password" className="input-field" name="rePassword"></input>
-                </div>
-                <div>
-                    <label>Email</label><input className="input-field" name="email"></input>
-                </div>
-                <div>
-                    <input className="btn" type="submit" value="Register"></input>
-                </div>
-            </form>
+            <div className="container">
+                <form onSubmit={this.handleSubmit} className="container-form">
+                    {this.state.errors.length > 0 ?
+                        <ErrorDisplayComponent errors={this.state.errors} /> : ''
+                    }
+                    <div className="center">
+                        <h2>Register</h2>
+                    </div>
+                    <div>
+                        <label>Username</label><input className="input-field" name="username"></input>
+                    </div>
+                    <div>
+                        <label>Password</label><input type="password" className="input-field" name="password"></input>
+                    </div>
+                    <div>
+                        <label>Repeat password</label><input type="password" className="input-field" name="rePassword"></input>
+                    </div>
+                    <div>
+                        <label>Email</label><input className="input-field" name="email"></input>
+                    </div>
+                    <div>
+                        <input className="btn" type="submit" value="Register"></input>
+                    </div>
+                </form>
+            </div>
         )
     }
 }

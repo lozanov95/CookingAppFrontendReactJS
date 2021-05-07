@@ -38,23 +38,25 @@ export class Login extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} className="form-container align-end">
-                {this.state.errors.length > 0 ?
-                    <ErrorDisplayComponent errors={this.state.errors} /> : ''
-                }
-                <div className="center">
-                    <h3>Login</h3>
-                </div>
-                <div>
-                    <label>Username</label><input className="input-field" name="username" />
-                </div>
-                <div>
-                    <label>Password</label><input className="input-field" name="password" type="password" />
-                </div>
-                <div>
-                    <input className="btn" type="submit" value="Login" />
-                </div>
-            </form>
+            <div className="container">
+                <form className="container-form" onSubmit={this.handleSubmit}>
+                    {this.state.errors.length > 0 ?
+                        <ErrorDisplayComponent errors={this.state.errors} /> : ''
+                    }
+                    <div className="center">
+                        <h3>Login</h3>
+                    </div>
+                    <div>
+                        <label>Username</label><input className="input-field" name="username" />
+                    </div>
+                    <div>
+                        <label>Password</label><input className="input-field" name="password" type="password" />
+                    </div>
+                    <div>
+                        <input className="btn" type="submit" value="Login" />
+                    </div>
+                </form>
+            </div>
         );
     }
 }

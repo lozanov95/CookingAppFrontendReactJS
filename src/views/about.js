@@ -1,6 +1,6 @@
 export function About() {
     return (
-        <div className="form-container">
+        <div className="container column">
             <h2>About</h2>
             <div>
                 <p>I am Vasil Lozanov and this is a custom app that I made. Here you can create/read/update/delete cooking recipes.</p>

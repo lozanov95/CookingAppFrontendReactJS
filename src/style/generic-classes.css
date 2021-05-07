@@ -1,7 +1,8 @@
 body{
-    display: contents;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 0px;
+    background-color: #f3f2ef;
 }
 .input-field{
     border-radius: 6px;
@@ -24,15 +25,21 @@ body{
     width: 150px;
     height: 27px;
 }
-.form-container{
+.container{
+    padding-top: 50px;
     display: inline-flex;  
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;    
-    position: relative;
-    margin-top: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    width: 70%;
+    background-color: #ffffff;
 }
-.form-container > div{
+.container-form{
+    display: inline-flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+.container-form > div{
     margin-bottom: 3px;
 }
 .error{
@@ -78,4 +85,10 @@ body{
 }
 .align-end{
     align-items: flex-end;
+}
+.row{
+    flex-flow: row;
+}
+.column{
+    flex-flow: column;
 }
