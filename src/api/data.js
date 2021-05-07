@@ -36,6 +36,10 @@ export async function getComments(recipeId) {
     return await api.get(api.settings.host + '/api/recipes/' + recipeId + '/comments');
 }
 
+export async function searchRecipe(searchString) {
+    return await api.get(api.settings.host + '/api/recipes?search=' + searchString);
+}
+
 export const register = api.register;
 export const login = api.login;
 export const logout = api.logout;
