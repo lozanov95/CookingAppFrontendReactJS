@@ -9,3 +9,8 @@
 .comments {
     display: block;
 }
+@media screen and (max-width:786px) {
+    .comments-container{
+        width: 90%;
+    }
+}

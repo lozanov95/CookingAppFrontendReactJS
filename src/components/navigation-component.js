@@ -30,20 +30,31 @@ export class Navigation extends Component {
 
     render() {
         return (
-            <nav>
-                <div className="left">
-                    <a className="nav-item" href='/'>Home</a>
-                    <a className="nav-item" href='/recipes'>Recipes</a>
-                    {this.state.authenticated ? <a className="nav-item" href='/myrecipes'>My recipes</a> : ""}
-                    {this.state.authenticated ? <a className="nav-item" href='/create'>Create recipe</a> : ""}
-                    <a className="nav-item" href='/about'>About</a>
+            <div className="nav">
+                <input type="checkbox" id="nav-check" />
+                <div className="nav-header">
+                    <div className="nav-title">
+                        CookingApp
+                    </div>
                 </div>
-                <div className="right">
-                    {!this.state.authenticated ? <a className="nav-item" href='/register'>Register</a> : ""}
-                    {!this.state.authenticated ? <a className="nav-item" href='/login'>Login</a> : ""}
-                    {this.state.authenticated ? <a className="nav-item" href='/' onClick={this.handleClick}>Logout</a> : ""}
+                <div className="nav-btn">
+                    <label htmlFor="nav-check">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
                 </div>
-            </nav>
+                <div className="nav-links left">
+                    <a href='/' className="nav-link">Home</a>
+                    <a href='/recipes' className="nav-link">Recipes</a>
+                    {this.state.authenticated ? <a href='/myrecipes' className="nav-link">My recipes</a> : ""}
+                    {this.state.authenticated ? <a href='/create' className="nav-link">Create recipe</a> : ""}
+                    <a href='/about' className="nav-link">About</a>
+                    {!this.state.authenticated ? <a href='/register' className="nav-link">Register</a> : ""}
+                    {!this.state.authenticated ? <a href='/login' className="nav-link">Login</a> : ""}
+                    {this.state.authenticated ? <a href='/' onClick={this.handleClick} className="nav-link">Logout</a> : ""}
+                </div>
+            </div>
         )
     }
 }

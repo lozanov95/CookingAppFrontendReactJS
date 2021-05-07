@@ -1,13 +1,13 @@
 body{
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-left: 0px;
+    margin: 0px;
     background-color: #f3f2ef;
 }
 .input-field{
     border-radius: 6px;
     width: 200px;
-    height: 22px;
+    height: 30px;
     margin: 0px 5px 0px 5px;
 }
 .textarea-field{
@@ -91,4 +91,17 @@ body{
 }
 .column{
     flex-flow: column;
+}
+@media screen and (max-width: 768px) {
+    .container{
+        width: 92%;
+    }
+    .textarea-field{
+        width: 300px;
+        height: 200px;
+    }
+    .img{
+        width: 320px;
+        height: 250px;
+    }
 }
