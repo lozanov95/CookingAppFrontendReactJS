@@ -11,6 +11,7 @@ import { Edit } from './views/edit.js';
 import { About } from './views/about.js';
 import { MyRecipesView } from './views/myrecipe.js';
 import { HomeView } from './views/home.js';
+import { SearchView } from './views/search.js';
 
 class App extends Component {
   render() {
@@ -26,6 +27,7 @@ class App extends Component {
         <Route path="/edit/:id" component={Edit} />
         <Route path="/about" component={About} />
         <Route path="/myrecipes" component={MyRecipesView} />
+        <Route path="/search/:searchString" component={SearchView} />
       </Switch>
     </Router>
   }

@@ -53,10 +53,10 @@ body{
     align-items: center;
 }
 .left{
-    float: left
+    float: left;
 }
 .right{
-    float: right
+    float: right;
 }
 .inline-fl{
     display: inline-flex;

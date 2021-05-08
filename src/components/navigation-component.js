@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { logout, searchRecipe } from '../api/data.js';
+import { logout } from '../api/data.js';
 
 export class Navigation extends Component {
     constructor(props) {
@@ -23,12 +23,17 @@ export class Navigation extends Component {
     }
 
     async handleSearch(ev) {
-        const searchString = ev.target.value;
+        ev.preventDefault();
+        const formData = new FormData(ev.target);
+        const searchString = formData.get('searchString');
+        window.location = '/search/' + searchString;
+        /*
         let result = [];
         if (searchString.length > 0) {
             result = await searchRecipe(searchString);
         }
         this.setState({ result })
+        */
     }
 
     async handleClick(ev) {
@@ -55,16 +60,21 @@ export class Navigation extends Component {
                     </label>
                 </div>
                 <div className="nav-links">
-                    <div className="nav-left">
+                    <div className="left">
                         <a href='/' className="nav-link">Home</a>
                         <a href='/recipes' className="nav-link">Recipes</a>
                         {this.state.authenticated ? <a href='/myrecipes' className="nav-link">My recipes</a> : ""}
                         {this.state.authenticated ? <a href='/create' className="nav-link">Create recipe</a> : ""}
                         <a href='/about' className="nav-link">About</a>
-                        <input className="input-field" placeholder="search recipe by name" id="searchField" onKeyUp={this.handleSearch} />
+
+                        <form onSubmit={this.handleSearch} className="nav-search-form">
+                            <input className="input-field" placeholder="search recipe by name" id="searchField" name="searchString" />
+                            <input type="submit" value="Search" className="nav-btn" />
+                        </form>
+
                         <SearchResult recipes={this.state.result} />
                     </div>
-                    <div className="nav-right">
+                    <div className="right">
                         {!this.state.authenticated ? <a href='/register' className="nav-link">Register</a> : ""}
                         {!this.state.authenticated ? <a href='/login' className="nav-link">Login</a> : ""}
                         {this.state.authenticated ? <a href='/' onClick={this.handleClick} className="nav-link">Logout</a> : ""}

@@ -35,13 +35,15 @@
 .nav > #nav-check {
   display: none;
 } 
-.nav-left{
-  display: inline;
-  float:left;
+.nav-search-form{
+  display: inline-flex;
+  align-items: center;
 }
-.nav-right{
-  display: inline;
-  float:right;
+.nav-btn{
+  background-color: #f3f2ef;
+  font-size: 16px;
+  border-radius: 8px;
+  height: 30px;
 }
 
 @media (max-width:786px) {
