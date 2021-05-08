@@ -69,7 +69,7 @@ export class Navigation extends Component {
 
                         <form onSubmit={this.handleSearch} className="nav-search-form">
                             <input className="input-field" placeholder="search recipe by name" id="searchField" name="searchString" />
-                            <input type="submit" value="Search" className="nav-btn" />
+                            <input type="submit" value="Search" className="nav-search-btn" />
                         </form>
 
                         <SearchResult recipes={this.state.result} />
