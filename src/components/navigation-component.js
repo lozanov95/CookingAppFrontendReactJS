@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { logout } from '../api/data.js';
+import { undefinedNullEmptyValidator } from '../utils/validators.js';
 
 export class Navigation extends Component {
     constructor(props) {
@@ -26,14 +27,9 @@ export class Navigation extends Component {
         ev.preventDefault();
         const formData = new FormData(ev.target);
         const searchString = formData.get('searchString');
-        window.location = '/search/' + searchString;
-        /*
-        let result = [];
-        if (searchString.length > 0) {
-            result = await searchRecipe(searchString);
+        if (undefinedNullEmptyValidator(searchString)) {
+            window.location = '/search/' + searchString;
         }
-        this.setState({ result })
-        */
     }
 
     async handleClick(ev) {
